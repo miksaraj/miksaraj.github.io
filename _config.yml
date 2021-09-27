@@ -1,0 +1,11 @@
+# Site settings
+title: Miksaraj's Blog
+baseurl: ""
+url: "https://miksaraj.github.io"
+github_username: miksaraj
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Display settings
+excerpt_separator: "<!--excerpt-->"

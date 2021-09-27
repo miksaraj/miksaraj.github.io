@@ -1,0 +1,59 @@
+body {
+    display: block;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #111111;
+    background-color: #fdfdfd;
+}
+
+.page-content {
+    padding: 30px 0;
+}
+
+.page-heading {
+    font-size: 20px;
+}
+
+h1, ul, h2, p {
+    margin-bottom: 15px;
+}
+
+.site-title {
+    font-size: 26px;
+    font-weight: 300;
+    line-height: 56px;
+    letter-spacing: -1px;
+    margin-bottom: 0;
+    float: left;
+}
+
+.wrapper {
+    max-width: -webkit-calc(800px - (30px * 2));
+    max-width: calc(800px - (30px * 2));
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+.post-list {
+    margin-left: 0;
+    list-style: none;
+}
+
+.post-list>li, .post-header, .post-content {
+    margin-bottom: 30px;
+}
+
+.post-meta {
+    font-size: 14px;
+    color: #828282;
+}
+
+.post-title {
+    font-size: 42px;
+    letter-spacing: -1px;
+    line-height: 1;
+}
