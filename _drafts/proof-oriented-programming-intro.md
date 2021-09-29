@@ -70,5 +70,7 @@ maths required: we can try and use F* as a tool
 and proof-oriented programming as a technique for
 formally proving the correctness of the
 formulae required for the calculations. So
-that's what I set out to do, and here's what
-I did, step by step.
+that's what I set out to do. While a quick start
+guide for setting up an F* development environment
+is coming out in a different post, here's what
+I did after that, step by step.
