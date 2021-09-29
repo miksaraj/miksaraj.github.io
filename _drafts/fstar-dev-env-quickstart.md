@@ -121,11 +121,15 @@ are a bit more limited: Atom, Vim, VS Code and
 Emacs. The plugins for Atom and Vim are discontinued,
 so I can't recommend them, whereas the VS Code plugin
 is relatively new, and lacks some of the features
-the recommended Emacs has. So I decided to go with
-Emacs, and as such the following sections guide you
+the recommended Emacs plugin has. So I decided to go with
+Emacs, and hence the following sections guide you
 through setting up your Emacs editor for F* development
 for GNU Emacs on Ubuntu ***and*** Aquamacs on Mac.
 For other Linux distributions see the [GNU Emacs website](https://www.gnu.org/software/emacs/download.html#gnu-linux) for installing instructions.
+
+**NB!** if you already have an Emacs version installed
+on your development machine, feel free to skip to
+[plugin setup](#setup-fstar-mode)
 
 For Ubuntu/Debian, installing Emacs is simple:
 
@@ -134,6 +138,8 @@ For Ubuntu/Debian, installing Emacs is simple:
 For F* development on Mac OS we want to install
 Aquamacs (or at least that's the Emacs version
 I prefer for Mac). You can download it from [here](http://aquamacs.org/download.html).
+
+### Setup `fstar-mode` ###
 
 After you've got your Emacs installed you'll need the
 [fstar-mode plugin](https://github.com/FStarLang/fstar-mode.el)
