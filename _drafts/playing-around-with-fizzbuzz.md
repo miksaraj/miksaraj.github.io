@@ -141,7 +141,7 @@ is *maintainable and extensible* yet not *over-engineered*.
 It's just FizzBuzz, right? What can be so hard about it?
 The thing is, an extended FizzBuzz is as a problem more
 subtle than most developers realise at the outset. What
-trips many of us up os that the control flow requires
+trips many of us up is that the control flow requires
 understanding what you've previously done in order to
 make a final decision. It's very easy to get this
 wrong:
@@ -228,7 +228,7 @@ add as many prime factors as you want without a
 worry in the world. It is on the slow side of
 implementations, and someone could call it
 unreadable. There's a lot of machinery around
-the solution to in order to solve it in an
+the solution in order to solve it in an
 extensible and maintainable manner. The real
 issue with this solution, however, is that it
 is only obvious in its operation to programmers
@@ -302,8 +302,8 @@ Optional values are actually simple to understand:
 When dealing with optional values, we either have
 an empty value or a wrapped value. Turns out that
 if the enclosed `thing`'s type forms a monoid,
-then `Maybe thing`forms a monoid! I'm assuming you
-amy not be familiar with monoids, so this can be
+then `Maybe thing` forms a monoid! I'm assuming you
+may not be familiar with monoids, so this can be
 a little tricky to wrap your head around. So let's
 take a moment to consider how exactly we define
 this with a list of possible values for `mappend`,
@@ -315,7 +315,7 @@ the append operation in Haskell:
 * `mappend(Nothing, Nothing) = Nothing`
 
 So we append the inner value if it is a `Just a`,
-and if it's a `Nothing` we just reat it like an
+and if it's a `Nothing` we just treat it like an
 empty string. Simple. Ok so let's finally get back
 to a FizzBuzz* implementation, this time again in
 Haskell. If you're unfamiliar with Haskell, don't
@@ -327,7 +327,6 @@ worry. I'll explain.
 module Main where
 import Data.Monoid (mappend)
 import Data.Maybe (fromMaybe, listToMaybe, maybe)
-import System.Environment (getArgs)
 
 fizzbuzz i = fromMaybe (show i) $ mappend   ["Fizz" | i `rem` 3 == 0]
                                             ["Buzz" | i `rem` 5 == 0]
@@ -354,13 +353,13 @@ of `fizzbuzz`, so let's break it down:
     become a `Nothing` our `fromMaybe` will catch
     it and turn it into the string representation
     of our number.
-3.  Next, we use the [`MonadComprehensions`](https://gitlab.haskell.org/ghc/ghc/-/wikis/monad-comprehensions) syntactic sugart to
+3.  Next, we use the [`MonadComprehensions`](https://gitlab.haskell.org/ghc/ghc/-/wikis/monad-comprehensions) syntactic sugar to
     define our `Maybe String` values. Each
     `[value | condition]` block returns a `Just value`
     if the condition is true, otherwise false.
     There are other ways we could have written
     this code (e.g. with a helper function), but
-    here I chose monad comprehensios since they
+    here I chose monad comprehensions since they
     exist and are easy to use. You may have also
     noticed that we used the same syntax to generate
     our list of FizzBuzz in `main`. Monad Comprehensions
@@ -452,7 +451,7 @@ main = do
     mapM_ putStrLn [ fizzbuzz (pack . show) i | i <- [1..upTo] ]
 ```
 
-1.  We use `Data.Text` values and the `OverloadedString`
+1.  We use `Data.Text` values and the `OverloadedStrings`
     language extension to allow us to naturally create
     `Text` values instead of `String` values when the
     type inferencer can determine we need to.
@@ -461,14 +460,14 @@ main = do
     to produce the default out to the caller.
 
 It doesn't need to stop here, either. We could even do
-all sorts of potentially usefult things like using a
+all sorts of potentially useful things like using a
 key-value mapping to store the occurrences of "Fizz",
 "Buzz" and "Bazz" instead of using a string representation.
 A monoid there would even give us a way to combine them
 across iterations, building a counter for occurrences - all
 while using the same original function! Turns out that the 
 monoid view of this logic is not only clearer and more succint,
-it's also *more general*. Not just arrays and strings an integers
+it's also *more general*. Not just arrays, strings and integers
 can form monoids, but also more powerful structures
 like Bloom filters, hash tables, nodes in a neural network...
 I could go on. But let's wrap it up here. Now, just ditch
