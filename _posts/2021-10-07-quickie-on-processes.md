@@ -18,7 +18,7 @@ encourages collaboration between software developers,
 quality assurance and non-development stakeholders ([North 2006](http://dannorth.net/introducing-bdd/);
 [2014](https://web.archive.org/web/20150901151029/http://behaviourdriven.org/);
 [Bellware 2008](https://www.codemag.com/article/0805061)).
-Behavioural development combines the general techniques
+BDD combines the general techniques
 and principles of TDD with ideas from Domain-Driven
 Design (DDD) and object-oriented analysis and design to provide
 software development and management teams with a common set
@@ -50,7 +50,7 @@ together internal stakeholders to collaborate. However,
 Adam Craven (2015) argues that the use of BDD tools would
 make other functional testing redundant, so one must also
 consider one day how one would then deal with, for example,
-already existing unit testing.
+already existing unit testing practices.
 
 In general, I have been thinking a lot about development processes,
 and I will certainly write more on this subject in the future.
