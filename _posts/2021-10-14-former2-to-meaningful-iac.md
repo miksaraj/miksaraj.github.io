@@ -28,7 +28,7 @@ Now the problem here is that there are some security
 considerations to take into account with a
 website out there and inputting any form of
 AWS credentials in there. I'm sure Ian has
-seen to mitigating any possible security issue,
+seen to mitigating any possible security issues,
 but for those paranoid enough, he does offer
 something better - a way that I implore you to
 go with: just fork the repo and [host it locally](https://github.com/iann0036/former2/blob/master/HOSTING.md).
@@ -110,7 +110,8 @@ const ExampleInstance = new Instance(this, 'example', {
             machineImage: MachineImage.genericLinux({ 'eu-west-1a' : 'ami-c51e3eb6' }),
             securityGroup: ExampleSecurityGroup,
             userData: ExampleUserData,
-            vpc: ExampleVPC
+            vpc: ExampleVPC,
+            role: ExampleServiceRole
         })
 ```
 
@@ -145,11 +146,11 @@ a Bastion stack and the App stack. Like this:
 ```ts
 import { Construct } from "@aws-cdk/core"
 
-export class ElasticLoadBalancerConstruct extends Construct {
+export class AppServerConstruct extends Construct {
     constructor(scope: Construct, id: string) {
         super(scope, id)
 
-        /* Your L2 and L1 constructs needed for ELB go here */
+        /* Your L2 and L1 constructs needed for your app servers go here */
 
     }
 }
