@@ -10,7 +10,7 @@ it's time to think about combining them into
 infrastructure stacks. There are a few ways of going
 about it. You could make stacks by *application groups*,
 by *services* or even go the *micro stacks* way. There
-is also the **antipatterns** of a *monolithic* stack
+is also the **antipattern** of a *monolithic* stack
 that you probably should avoid. We'll touch on [the reasons
 why](#why-is-a-monolith-bad) as well as [all the options](#how-to-stack-em-up)
 in this post.<!--excerpt-->
@@ -25,7 +25,29 @@ in here.
 
 ## How to stack 'em up? ##
 
+The question of how to build stacks
+from lower level infrastructure
+constructs can be a tricky one. TL;DR:
+there is no single right way to go
+about it. In your specific case, the way
+to divide your infrastruce into stacks
+might be obvious. But in the case it is
+not, there are a few ways to go about it.
+
 ### Why is a monolith BAD? ###
+
+While I do maintain that declaring all
+of your infrastructure under one
+monolithic stack is an antipattern,
+there is one discliner I'd like to get
+out of the way. If you're infrastructure
+is really simple, like a single serverless
+function behind an API gateway and a
+storage of some sort, dividing it into
+separate stacks serves only in adding
+unneccessary complexity and nothing of
+value. Most infrastructures, however,
+are a little more complicated than that.
 
 ## Building environments with stacks ##
 
