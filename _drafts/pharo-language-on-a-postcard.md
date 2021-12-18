@@ -47,7 +47,7 @@ There you have a method declaration where
 
 ```smalltalk
 <syntaxOn: #postcard>
-````
+```
 This one's interesting and warrants a little
 explanation. What you see on this line is a
 *pragma*. <EXPLAIN PRAGMA>

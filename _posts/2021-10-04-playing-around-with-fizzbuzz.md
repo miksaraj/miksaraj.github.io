@@ -59,7 +59,7 @@ int main (void)
     int i;
     for (i = 1; i <= 100; i++)
     {
-        if (!(i ‰ 15))
+        if (!(i % 15))
             printf("FizzBuzz");
         else if (!(i % 3))
             printf("Fizz");
