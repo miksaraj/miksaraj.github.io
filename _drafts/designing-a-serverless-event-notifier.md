@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Designing an Serverless Event Notifier"
-categories:
+categories: dev-serverless
 author: Mikko Rajakangas
 ---
 I have a personal use case for an application
@@ -41,6 +41,35 @@ near you? Now that we have the problem, let's get designing...
 What does our application need to do, and what does it *not* need to do? On the surface, the functionality is quite simple:
 
 1. Fetch the information on the week's khachapuri food truck locations.
-2. Notify the users subscribed to given locations, if khachapuri is available kn their town.
+2. Notify the users subscribed to given locations, if khachapuri is available in their town.
 
 Simple at the outset, but how do we achieve this?
+
+### Getting the information ###
+
+First, we have to fetch the information
+regarding the khachapuri truck locations. That requires a web scraper,
+or to be more precise, an instagram
+scraper. To get the relevant information
+for each week, we need to do the
+scraping once a week. What if the
+information isn't available when we the
+scraping code runs? Then we need to set
+it up in a way that it retries until the
+scraping returns a result. If for some
+reason there isn't information available
+at all (say, the trucks are on holiday 
+break), we need to also set a limit to          
+the retries. Now we have the first set
+of specification for our first function:
+
+1. A function that scrapes the company's instagram posts for the week's schedule.
+2. The above function should be invoked by a cron job once a week.
+3. If the scraping function fails to find the week'e schedule, set a retry at a set interval.
+4. Keep track of the retries and impose a limit on the retries to prevent an endless retry loop.
+
+### Doing something with the data ###
+
+Ok, now that we have the data containing
+the week's khachapuri truck locations
+and opening hours, what do we do with it?
