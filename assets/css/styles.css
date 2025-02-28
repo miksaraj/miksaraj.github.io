@@ -4,8 +4,12 @@ body {
     font-size: 16px;
     font-weight: 400;
     line-height: 1.5;
-    color: #111111;
-    background-color: #fdfdfd;
+    color: #d3d3d3;
+    background-color: #121212;
+}
+
+a {
+    text-shadow: 0 0 5px #800080;
 }
 
 .page-content {
@@ -27,6 +31,7 @@ h1, ul, h2, p {
     letter-spacing: -1px;
     margin-bottom: 0;
     float: left;
+    text-shadow: 0 0 10px #ffffff;
 }
 
 .wrapper {
