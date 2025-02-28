@@ -9,7 +9,8 @@ body {
 }
 
 a {
-    text-shadow: 0 0 5px #800080;
+    text-shadow: 0 0 2px #000000;
+    color: #00008b;
 }
 
 .page-content {
